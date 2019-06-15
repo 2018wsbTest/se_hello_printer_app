@@ -7,10 +7,12 @@ deps:
 lint:
 	flake8 hello_world test
 
-
 run:
 	python main.py
 
 test:
 	PYTHONPATH=. py.test
 	PYTHONPATH=. py.test  --verbose -s
+
+docker_build:
+	docker	bulid	-t hello-world-printer .
