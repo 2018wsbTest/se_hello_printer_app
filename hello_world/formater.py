@@ -1,3 +1,4 @@
+import json
 
 PLAIN = "plain"
 PLAIN_UP = "plain_uppercase"
@@ -24,7 +25,10 @@ def get_formatted(msg, imie, format):
 
 
 def format_to_json(msg, imie):
-    return ('{ "imie":"' + imie + '", "mgs":"' + msg + '"}')
+    imie_mgs = {'imie':imie,
+    'msg':msg}
+    my_json = json.dumps(imie_mgs)
+    return (my_json)
 
 def format_to_xml(msg, imie):
     return('{"<greetings>\n\t<name>"' + imie + '"</name>\n\t<msg>' + msg + '</msg>\n<greetings>"}')
