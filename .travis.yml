@@ -12,3 +12,9 @@ script:
   -  make lint
   -  make docker_build
   -  make docker_push
+
+
+deploy:
+  provider: heroku
+  app: thawing-earth-57609
+  api_key: ${HEROKU_API_KEY}
