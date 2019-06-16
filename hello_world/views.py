@@ -16,6 +16,14 @@ def index():
                          output.lower())
 
 
+# @app.route('/')
+# def index():
+#     output = request.args.get('output')
+#     if not output:
+#         output = PLAIN
+#     return rander_template('index.html')
+
+
 @app.route('/outputs')
 def supported_output():
     return ", ".join(SUPPORTED)
